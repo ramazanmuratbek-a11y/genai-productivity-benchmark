@@ -1,0 +1,16 @@
+experiment:
+  name: "GenAI_Productivity_Benchmark"
+  dataset: "openai_humaneval"
+  num_samples: 20
+  timeout_seconds: 60
+
+model:
+  provider: "openai"
+  name: "gpt-4o-mini"
+  temperature: 0.0
+
+baseline:
+  type: "legacy_regex_script"
+
+api_keys:
+  openai: "YOUR_OPENAI_API_KEY_HERE"
