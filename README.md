@@ -26,3 +26,40 @@ genai-productivity-benchmark/
 ├── requirements.txt     # Python dependencies 
 ├── README.md            # This documentation
 └── LICENSE              # Open Science MIT License
+
+
+
+⚙️ System Requirements
+OS: Linux (Ubuntu 20.04/22.04), macOS, or Windows (via WSL2).
+
+Environment: Docker OR Python 3.11 with virtual environment (venv).
+
+Dependencies: datasets, pyarrow, openai (see requirements.txt).
+
+API Keys: An active OpenAI API key is required to run the experimental LLM group.
+
+🚀 Quickstart & Reproducibility Guide
+You can fully reproduce our benchmarking experiment in just 3 commands using Docker:
+
+1. Clone the repository:
+git clone [https://github.com/ramazanmuratbek-a11y/genai-productivity-benchmark.git](https://github.com/ramazanmuratbek-a11y/genai-productivity-benchmark.git)
+cd genai-productivity-benchmark
+
+2. Configure environment:
+Update the config.yaml file with your OpenAI API key and desired parameters.
+
+3. Build and Run the Benchmark (Docker):
+docker build -t genai-benchmark .
+docker run genai-benchmark python src/benchmark.py --config config.yaml
+
+📄 License & Citation
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+If you use this benchmark in your research, please cite:
+@misc{tasbolatkyzy2026genai,
+  author = {Tasbolatkyzy, Zhanerke and Muratbek, Ramazan},
+  title = {The Impact of Generative AI Tools on Employee Productivity Benchmark},
+  year = {2026},
+  publisher = {GitHub},
+  howpublished = {\url{[https://github.com/YOUR-USERNAME/genai-productivity-benchmark](https://github.com/YOUR-USERNAME/genai-productivity-benchmark)}}
+}
