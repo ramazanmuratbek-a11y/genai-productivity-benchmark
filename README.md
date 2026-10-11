@@ -66,11 +66,10 @@ Running the `benchmark.py` script on the test dataset will generate a comparativ
 📄 License & Citation
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-If you use this benchmark in your research, please cite:
-@misc{tasbolatkyzy2026genai,
+@misc{muratbek2026genai,
   author = {Tasbolatkyzy, Zhanerke and Muratbek, Ramazan},
   title = {The Impact of Generative AI Tools on Employee Productivity Benchmark},
   year = {2026},
   publisher = {GitHub},
-  howpublished = {\url{[https://github.com/YOUR-USERNAME/genai-productivity-benchmark](https://github.com/YOUR-USERNAME/genai-productivity-benchmark)}}
+  howpublished = {\url{https://github.com/ramazanmuratbek-a11y/genai-productivity-benchmark}}
 }
