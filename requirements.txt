@@ -1,4 +1,6 @@
-datasets==3.0.0
-pyarrow==17.0.0
-openai==1.45.0
+# Compatible with Python 3.11; exact dependency versions for the research environment.
+pandas==2.2.3
+numpy==2.2.5
+scipy==1.15.3
 PyYAML==6.0.2
+jupyterlab==4.4.3

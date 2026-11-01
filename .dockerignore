@@ -1,0 +1,14 @@
+.git
+.gitignore
+.env
+.env.*
+**/__pycache__
+**/*.pyc
+**/.ipynb_checkpoints
+.venv
+venv
+outputs
+results
+data/raw
+data/private
+.pytest_cache

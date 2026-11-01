@@ -1,0 +1,16 @@
+experiment:
+  name: genai_professional_writing_crossover
+  status: proposal
+  task_type: professional_writing
+  time_limit_minutes: 30
+  random_seed: 42
+conditions:
+  baseline: without_ai
+  intervention: with_ai
+metrics:
+  primary: completion_time_minutes
+  secondary:
+    - quality_score
+    - factual_accuracy_percent
+  quality_guardrail_tolerance_points: 5
+# AI access occurs in a browser; no API key is needed by this analysis pipeline.
