@@ -33,9 +33,9 @@ survey/observational component and is not answered by this experiment.
 
 - **Muratbek Ramazan** — study methodology, research analysis pipeline,
   reproducible infrastructure.
-- **Tasbolatkyzy Zhanerke** — research literature, task and evaluation design,
-  documentation (planned collaboration; commit attribution reflects actual
-  work only).
+- **Tasbolatkyzy Zhanerke** — evaluation rubric design,
+  factual evaluation metrics, scoring guidelines,
+  and research documentation.
 
 ## Repository structure
 
@@ -114,6 +114,9 @@ The analysis writes `outputs/demo/summary.json` and
 | Relative time reduction | percent | (mean no-AI time - mean AI time) / mean no-AI time × 100 |
 | Output quality difference | points | Difference in mean paired 0–100 quality score |
 | Factual accuracy difference | percentage points | Difference in correct facts / total facts × 100 |
+| Factual Precision | percent | Supported claims / all assessable factual claims × 100 |
+| Factual Recall | percent | Correctly covered anchor facts / total required anchor facts × 100 |
+| Factual F1-score | percent | Harmonic mean of Precision and Recall |
 | Guardrail assessment | categorical | 95% CI lower quality difference > -5 required; otherwise not established |
 | Excluded pairs | participants | Paired records with incomplete task(s) |
 
@@ -158,7 +161,7 @@ redistribute confidential or third-party research data.
 
 The research analysis pipeline has been verified in three environments:
 
-- Local Windows Python environment: 7 unit tests passed.
+- Local Windows Python environment: 20 unit tests passed.
 - GitHub Actions: automated reproducibility checks passed.
 - Docker Desktop with WSL 2: Docker image built and executed successfully.
 
