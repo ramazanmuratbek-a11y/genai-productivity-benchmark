@@ -3,6 +3,7 @@
 import argparse
 import json
 from pathlib import Path
+
 import pandas as pd
 import yaml
 
@@ -33,6 +34,10 @@ def main():
     if 'time_minutes' in summary:
         print('Mean paired time difference (AI - no AI), min:',
               round(summary['time_minutes']['mean_paired_difference_with_minus_without'], 3))
+        print('Exploratory claim metrics: paired precision records:',
+              summary['claim_metric_pairs_with_valid_precision'])
+        print('Exploratory claim metrics: paired F1 records:',
+              summary['claim_metric_pairs_with_valid_f1'])
     print('Research status:', summary['status'])
     print('Output:', args.output_dir.resolve())
 
