@@ -153,3 +153,16 @@ comply with institutional data-protection requirements.
 Source code is distributed under the repository's [MIT License](LICENSE).
 The license does not override participant consent or grant permission to
 redistribute confidential or third-party research data.
+
+## Verified Reproducibility
+
+The research analysis pipeline has been verified in three environments:
+
+- Local Windows Python environment: 7 unit tests passed.
+- GitHub Actions: automated reproducibility checks passed.
+- Docker Desktop with WSL 2: Docker image built and executed successfully.
+
+The Docker demonstration processed 4 complete synthetic participant pairs
+and reported a mean paired time difference of -3.875 minutes.
+
+These are synthetic demonstration records, not empirical research findings.
