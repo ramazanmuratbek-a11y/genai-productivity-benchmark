@@ -169,3 +169,81 @@ The Docker demonstration processed 4 complete synthetic participant pairs
 and reported a mean paired time difference of -3.875 minutes.
 
 These are synthetic demonstration records, not empirical research findings.
+
+
+
+---
+
+## Task 3: Research Results and Scientific Visualization
+
+### Study Status
+
+This project currently uses synthetic demonstration data, not real experimental results.
+
+The dataset contains 8 observations from 4 paired participants.
+
+### Statistical Results
+
+| Metric | Without AI | With AI |
+|---|---:|---:|
+| Mean completion time (minutes) | 23.38 | 19.50 |
+| Median completion time (minutes) | 23.75 | 19.50 |
+| Standard deviation (minutes) | 2.56 | 2.38 |
+| p95 (minutes) | 25.78 | 21.85 |
+| p99 (minutes) | 25.96 | 21.97 |
+| Quality score | 81.63 | 84.50 |
+| Factual accuracy (%) | 85.00 | 95.00 |
+| Unsupported claim rate (%) | 9.17 | 15.71 |
+
+### Paired Bootstrap Analysis
+
+Mean paired time saved: **3.875 minutes**.
+
+95% bootstrap confidence interval: **[0.00, 6.25] minutes**.
+
+The analysis uses 10,000 paired bootstrap resamples and random seed 42.
+
+The interval includes zero, so a positive time-saving effect is not conclusively established.
+
+### Quality Guardrail
+
+The observed mean quality difference is +2.875 points (with AI minus without AI).
+
+The descriptive -5-point tolerance is satisfied, but formal statistical non-inferiority has not been established.
+
+### Scientific Figures
+
+**Figure 1 — Mean Completion Time**
+
+![Mean completion time](reports/figures/fig1_latency_vs_load.png)
+
+**Figure 2 — Completion Time Distribution**
+
+![Completion time distribution](reports/figures/fig2_distribution_boxplot.png)
+
+Both figures are available as 300 DPI PNG and PDF files.
+
+### Reproducibility
+
+Run the following commands from the repository root:
+
+    python -m pip install -r requirements.txt
+    python src/process_data.py
+    python src/visualize.py
+    jupyter lab
+
+Notebook: `notebooks/01_data_analysis.ipynb`
+
+Domain model: `docs/domain_model.md`
+
+Processed statistics: `data/processed/metrics_summary.csv`
+
+### Limitations
+
+All observations are synthetic and the dataset contains only four paired participants.
+
+Warm-up filtering is not applied because the dataset contains no separately labeled warm-up runs.
+
+Task-order, learning, and carryover effects are not estimated. Extreme percentiles are unstable at this sample size.
+
+These results demonstrate the analysis pipeline, not empirical evidence that AI improves productivity.

@@ -1,0 +1,3 @@
+condition,count,mean,median,std,min,max,p95,p99,quality_mean,quality_std,factual_accuracy_mean,factual_accuracy_std,unsupported_claim_rate_mean,unsupported_claim_rate_std,paired_mean_time_saved_minutes,paired_ci_lower_minutes,paired_ci_upper_minutes,quality_difference_points,quality_guardrail_passed,data_origin
+with_ai,4,19.5,19.5,2.380476142847616,17.0,22.0,21.85,21.97,84.5,2.6457513110645925,95.0,10.0,15.714285714285714,12.009066869446182,3.875,0.0,6.25,2.875,True,synthetic
+without_ai,4,23.375,23.75,2.5617376914898995,20.0,26.0,25.775,25.955,81.625,4.819664580307085,85.0,10.0,9.166666666666666,10.671873729054747,3.875,0.0,6.25,2.875,True,synthetic
