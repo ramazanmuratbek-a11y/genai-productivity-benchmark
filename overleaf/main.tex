@@ -1,0 +1,36 @@
+% SS10 / Narxoz Research Methods. Proposed study + SYNTHETIC demonstration.
+% Compiler: pdfLaTeX; citations: BibTeX (IEEEtran numeric style).
+\documentclass[conference]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\title{The Impact of Generative AI Tools on Employee Productivity and Work Quality in Knowledge-Based Office Tasks}
+\author{
+   \IEEEauthorblockN{Muratbek Ramazan}
+   \IEEEauthorblockA{Narxoz University\\Almaty, Kazakhstan}
+   \and
+   \IEEEauthorblockN{Tasbolatkyzy Zhanerke}
+   \IEEEauthorblockA{Narxoz University\\Almaty, Kazakhstan}
+}
+\begin{document}
+\maketitle
+\begin{abstract}
+This paper presents a reproducible protocol for evaluating generative AI assistance in professional writing. We propose a randomized, counterbalanced crossover comparison using matched writing tasks, a fair no-AI baseline, completion-time measures, blinded quality scoring, and factual-evaluation rules. We describe a reproducible Python analysis pipeline and show synthetic examples for verification only. Four fictional participant pairs and 100 separate software-benchmark runs are used to test reporting, not to estimate workplace productivity. No participants have yet been recruited; thus, this manuscript reports a study design and software demonstration rather than empirical findings.
+\end{abstract}
+\begin{IEEEkeywords}
+  generative AI, knowledge work, experimental design, writing productivity, reproducibility, paired bootstrap
+\end{IEEEkeywords}
+\input{sections/01_introduction}
+\input{sections/02_methodology}
+\input{sections/03_demonstration_results}
+\input{sections/04_discussion}
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+\end{document}

@@ -1,0 +1,70 @@
+\section{Methodology}\label{sec:methodology}
+\subsection{Design and conditions}
+We propose a randomized counterbalanced crossover with matched writing sets A and B. Each consenting participant completes one set with GenAI permitted and the other without GenAI, using conventional writing tools. The assignment generator balances the four possible combinations of condition order and task-set assignment, recording the random seed. Task prompts target 180--220 words, contain five prespecified anchor facts, and impose a provisional 30-minute limit per task. AI-tool version, access conditions, timing rules, and participant instructions must be fixed before recruitment. The two task sets require a pilot to check equivalence.
+
+Figure~\ref{fig:pipeline} summarizes the planned human-study pipeline and the \emph{separate} technical reproducibility stream. Table~\ref{tab:design} records the key design settings.
+
+\begin{figure}[t]
+  \centering
+  \begin{tikzpicture}[
+    box/.style={draw,rounded corners=2pt,align=center,text width=0.88\columnwidth,minimum height=6mm,font=\footnotesize},
+    arrow/.style={-Latex,thick},
+    node distance=3mm
+  ]
+    \node[box] (tasks) {Matched writing sets A/B and preregistered rubric};
+    \node[box,below=of tasks] (assignment) {Seeded counterbalanced assignment (AI / no AI)};
+    \node[box,below=of assignment] (study) {Human writing tasks: duration in \textbf{minutes}};
+    \node[box,below=of study] (scoring) {Blind quality/factual review and paired analysis};
+    \node[box,below=of scoring,dashed] (engineering) {Separate SS7/SS8 Python execution diagnostics: \textbf{milliseconds}};
+    \draw[arrow] (tasks)--(assignment);
+    \draw[arrow] (assignment)--(study);
+    \draw[arrow] (study)--(scoring);
+    \draw[arrow,dashed] (scoring)--(engineering);
+  \end{tikzpicture}
+  \caption{Proposed research and reproducibility workflow. The dashed technical stream benchmarks analysis software and cannot estimate AI effects on human writing.}
+  \label{fig:pipeline}
+\end{figure}
+
+\begin{table}[t]
+  \centering
+  \caption{Proposed crossover parameters (not yet implemented with real participants).}
+  \label{tab:design}
+  \begin{tabular}{@{}ll@{}}
+    \toprule
+    Design element & Proposed setting \\
+    \midrule
+    Conditions & Human with / without GenAI \\
+    Task sets & Matched A and B \\
+    Task length & 180--220 words \\
+    Anchor facts & Five per task \\
+    Time cap & 30 min per task \\
+    Quality scale & 0--100, two raters \\
+    Bootstrap draws & $B=10{,}000$ (demonstration) \\
+    Random seed & 42 (analysis demonstration) \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Primary outcome and estimand}
+Let $T_{i,0}$ and $T_{i,1}$ be participant $i$'s completed writing time without and with AI, respectively, both in \emph{minutes}. The primary estimand is the population mean paired time saving, estimated by
+\begin{equation}\label{eq:pairedtime}
+  D_i=T_{i,0}-T_{i,1},\qquad
+  \overline{D}=\frac{1}{n}\sum_{i=1}^{n}D_i.
+\end{equation}
+Here $D_i>0$ indicates time saved. The primary null is no mean benefit ($\mathbb{E}[D_i]\leq 0$), against a one-sided improvement alternative ($\mathbb{E}[D_i]>0$). This is equivalent to a negative difference when defining with-AI minus without-AI time. A paired bootstrap resamples \emph{participants}, preserving both observations within each pair. A 95\% percentile confidence interval provides descriptive uncertainty; a future confirmatory hypothesis test and analysis plan must specify directional testing, exclusions, and adequate sample size before data collection.
+
+\subsection{Secondary outcomes and quality guardrail}
+Two independent, blinded assessors score each response against accuracy/completeness (30 points), clarity (25), relevance (25), and professional language (20). Let $Q_{i,1}-Q_{i,0}$ be the with-AI minus without-AI quality difference. The provisional non-inferiority margin is $-5$ points; a formal claim would require a justified margin and the \emph{lower} confidence bound for the paired mean quality difference to exceed $-5$, rather than simply checking the point estimate.
+
+Required-fact recall is the fraction of five anchor facts represented correctly. For all assessable factual claims, precision and F1 are
+\begin{equation}\label{eq:factmetrics}
+  P=\frac{C_s}{C_s+C_u},\quad
+  R=\frac{A_c}{A_t},\quad
+  F_1=\frac{2PR}{P+R},
+\end{equation}
+where $C_s$ and $C_u$ are supported and unsupported factual claims and $A_c/A_t$ is correct-anchor-fact coverage. Undefined-denominator cases are recorded as missing, not silently set to perfect scores. Reviewer disagreements and claim-annotation rules must be resolved in a pilot.
+
+\subsection{Reproducibility, ethics, and software benchmark}
+The public repository contains protocols, synthetic CSV records, Python validation and processing, unit tests, pinned dependencies, Docker support, and GitHub Actions. Participants have \emph{not} been recruited. In a future real study, obtain informed consent, record anonymized assignment and timing information, limit access to confidential drafts, and avoid publishing identifiable writing samples.
+
+In a distinct educational engineering exercise, 5 warm-up runs and 100 measured executions benchmark the Python analysis pipeline on synthetic input sizes of 8, 16, and 32 rows. These timings are measured in \emph{milliseconds}, never pooled with the human-writing values in Eq.~\eqref{eq:pairedtime}. Failed executions remain in the failure-rate denominator; successful-run durations are summarized with median, p95/p99, IQR flags, and exploratory bootstrap intervals. No HTTP requests, chatbot latency, or requests-per-second performance are measured.

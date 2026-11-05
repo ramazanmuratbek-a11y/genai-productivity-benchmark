@@ -1,0 +1,19 @@
+\section{Introduction}\label{sec:introduction}
+\subsection{Context and motivation}
+Generative artificial intelligence (GenAI) tools increasingly support writing, information synthesis, and other knowledge-based office activities. Their effectiveness cannot be established from a software speed test alone: human completion time, output quality, and factual correctness are different outcomes. Previous empirical studies have reported productivity benefits in professional writing~\cite{noyExperimentalEvidenceProductivity2023} and customer-support work~\cite{brynjolfssonGenerativeAIWork2023}.
+
+\subsection{Research gap}
+Existing evidence concerns distinct occupations, task types, and intervention conditions. In particular, the potential advantage of AI assistance varies with task characteristics, and favorable average results do not guarantee correct performance on every assignment~\cite{dellacquaNavigatingJaggedTechnological2026}. Automation and augmentation also raise different questions about the role of human oversight~\cite{raischArtificialIntelligenceManagement2021}. This motivates a local, reproducible protocol in which the no-AI condition remains a realistic human baseline and quality is checked alongside duration. We do not claim these cited studies establish an effect in our proposed sample.
+
+\subsection{Research questions and contributions}
+The primary research question is: \emph{Does allowing GenAI assistance reduce the time required to complete matched professional writing tasks?} The primary estimand is within-participant mean time saved. A secondary question asks whether quality and factual coverage are preserved. Exploratory work will examine task order and professional experience. Survey-based questions about AI adoption (RQ1) would require separate data and are not answered by the crossover alone.
+
+This work makes the following \emph{methodological}, rather than empirical, contributions:
+\begin{itemize}
+  \item A fair within-participant AI/no-AI comparison with counterbalanced task and condition order;
+  \item A prespecified analysis of completion time, blinded quality assessment, and factual correctness;
+  \item An auditable synthetic-data implementation with validation, uncertainty calculations, and clearly separated software-performance instrumentation.
+\end{itemize}
+
+\subsection{Paper organization}
+Section~\ref{sec:methodology} details the experimental protocol and estimands. Section~\ref{sec:demonstration} presents synthetic verification outputs. Section~\ref{sec:discussion} discusses limitations, reproducibility, and the work required for empirical conclusions.
