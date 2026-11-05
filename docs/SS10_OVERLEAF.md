@@ -28,4 +28,4 @@ In IEEE source, `\cite{noyExperimentalEvidenceProductivity2023}` is a numeric re
 The project is self-contained. The input sections have `\label` and are referenced. The TikZ pipeline figure and the design table have explicit labels; mathematical expressions have equation labels and citations use `~\cite` nonbreaking spaces. All recorded measurements remain clearly labeled synthetic. A built-in Python structure test checks keys, labels, privacy, and provenance. The accompanying preview PDF should compile with pdfLaTeX/BibTeX; on Overleaf recompile to regenerate cross-references.
 
 ## Reproducibility status
-No real participant data exist. `SS10` is typesetting and academic communication, **not** a newly completed clinical/behavioral study. The published public GitHub `main` has the SS9 merge and the original SS5–SS8 code. Source figures from previous tasks remain unaffected.
+No real participant data exist. `SS10` is typesetting and academic communication, **not** a newly completed clinical/behavioral study. The public GitHub `main` now includes merged SS5-SS10 artifacts and their automated checks. Source figures from previous tasks remain unaffected.
