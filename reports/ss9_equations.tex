@@ -1,0 +1,42 @@
+% SS9 scientific equations for the proposed professional-writing crossover study.
+% SYNTHETIC DEMONSTRATION ONLY. Requires amsmath, amssymb; no real participant data.
+% Import into an existing LaTeX document with: \input{reports/ss9_equations}
+
+\begin{align}
+D_i &= T_{i,0} - T_{i,1},
+  \label{eq:ss9:paired-saving}\\
+\overline{D} &= \frac{1}{n}\sum_{i=1}^{n}D_i.
+  \label{eq:ss9:average-saving}
+\end{align}
+% T_{i,0}, T_{i,1} are the human task times WITHOUT / WITH AI, in minutes.
+% A positive D_i denotes illustrative time saved with AI.
+
+\begin{equation}
+S=\frac{\overline{T}_0}{\overline{T}_1},\qquad
+R_T=100\left(1-\frac{\overline{T}_1}{\overline{T}_0}\right)\%.
+\label{eq:ss9:speedup}
+\end{equation}
+
+\begin{equation}
+\widehat{\Delta}_Q=\frac{1}{n}\sum_{i=1}^{n}
+\left(Q_{i,1}-Q_{i,0}\right).
+\label{eq:ss9:quality}
+\end{equation}
+
+\begin{equation}
+\widehat{\mathrm{CI}}_{0.95}=\left[
+  Q_{0.025}\left(\overline{D}^{\ast(1)},\ldots,\overline{D}^{\ast(B)}\right),
+  Q_{0.975}\left(\overline{D}^{\ast(1)},\ldots,\overline{D}^{\ast(B)}\right)
+\right],\qquad B=10{,}000.
+\label{eq:ss9:bootstrap}
+\end{equation}
+% Resample n participant-level paired savings D_i with replacement (seed 42).
+% This bootstrap describes the illustrative paired HUMAN data, not technical runs.
+
+\begin{equation}
+p_{q}=Q_{q/100}\!\left(L_1,\ldots,L_m\right),\quad
+q\in\{50,95,99\}.
+\label{eq:ss9:percentiles}
+\end{equation}
+% L_j is a successful software pipeline execution time in MILLISECONDS;
+% failures are kept in the separate reported failure rate, not in these quantiles.

@@ -1,0 +1,33 @@
+% SS9 tables derived from the committed SYNTHETIC aggregates. Requires \usepackage{booktabs}.
+% No claims about measured employees or actual AI performance are supported.
+\begin{table}[htbp]
+\centering
+\caption{Synthetic professional-writing comparison: fictional paired observations (mean $\pm$ SD).}
+\label{tab:ss9:human}
+\begin{tabular}{lrr}
+\toprule
+Metric & Without AI & With AI \\
+\midrule
+Completion time (min) & 23.38 $\pm$ 2.56 & 19.50 $\pm$ 2.38 \\
+Quality (0--100) & 81.63 $\pm$ 4.82 & 84.50 $\pm$ 2.65 \\
+Anchor-fact recall (\%) & 85.00 & 95.00 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Synthetic SS7/SS8 software-runtime summary; 100 measured runs; timings in ms.}
+\label{tab:ss9:software}
+\begin{tabular}{lr}
+\toprule
+Statistic & Value \\
+\midrule
+Mean $\pm$ SD (ms) & 24.06 $\pm$ 3.30 \\
+Median (p25--p75, ms) & 22.94 (22.06--24.77) \\
+p95 (ms) & 31.27 \\
+p99 (ms) & 35.74 \\
+Error rate (\%) & 0.00 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -15,7 +15,7 @@ jobs:
           cache: pip
       - name: Install pinned dependencies
         run: python -m pip install -r requirements.txt
-      - name: Unit tests (including SS7 logging)
+      - name: Unit tests (SS7, SS8, SS9 and existing tests)
         run: python -m unittest discover -s tests -v
       - name: Synthetic demo (not real findings)
         run: |
@@ -31,3 +31,5 @@ jobs:
           python src/process_ss7_logs.py --input data/sample/ss7_software_benchmark_demo.jsonl
           python src/visualize_ss7_logs.py
           python -c "import pandas as pd; x=pd.read_csv('data/processed/ss8_software_metrics_summary.csv'); assert int(x.loc[x['group']=='overall','benchmark_runs'].iloc[0])==100; assert x.iloc[0]['measurement_unit']=='milliseconds'"
+      - name: SS9 synthetic report and booktabs consistency
+        run: python src/generate_ss9_report.py --check
