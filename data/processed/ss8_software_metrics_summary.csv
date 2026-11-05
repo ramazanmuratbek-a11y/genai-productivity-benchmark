@@ -1,0 +1,5 @@
+source,data_origin,measurement_unit,group,benchmark_runs,successful_runs,failed_runs,failure_rate_percent,iqr_outlier_flags,mean_ms,sd_ms,p25_ms,median_ms,p75_ms,p95_ms,p99_ms,bootstrap_mean_ci95_lower_ms,bootstrap_mean_ci95_upper_ms
+ss7_software_pipeline_synthetic,synthetic,milliseconds,overall,100,100,0,0.00000000,11,24.05774680,3.30297167,22.06088325,22.93822400,24.77392075,31.27275835,35.73564996,23.42178898,24.74863073
+ss7_software_pipeline_synthetic,synthetic,milliseconds,large (32 rows),9,9,0,0.00000000,1,26.64113889,4.48085950,23.55903800,25.66806200,28.39273300,33.97813980,35.36497916,24.13624814,29.57191652
+ss7_software_pipeline_synthetic,synthetic,milliseconds,medium (16 rows),30,30,0,0.00000000,4,23.89041263,2.78964850,22.28282175,23.01930600,24.06667175,30.11402885,32.39205715,23.00074674,24.94255299
+ss7_software_pipeline_synthetic,synthetic,milliseconds,small (8 rows),61,61,0,0.00000000,6,23.75888608,3.23365657,21.88524600,22.67746100,24.65144200,29.11937700,34.34000040,22.99915937,24.62706143
