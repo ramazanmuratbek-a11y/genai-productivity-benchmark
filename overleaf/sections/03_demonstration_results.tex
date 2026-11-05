@@ -1,0 +1,35 @@
+\section{Synthetic Demonstration Results}\label{sec:demonstration}
+\textbf{All numbers in this section are generated demonstration data, not observations from recruited employees.} The paired CSV has four fictional participants with eight completed task records. The values in Table~\ref{tab:writing} reproduce the project's committed processed summary. Mean paired time saved was 3.875 min (95\% paired percentile-bootstrap interval [0.00, 6.25] min; 10,000 resamples, seed 42). This interval includes zero, and the sample is fictional; no effectiveness inference is justified.
+
+\begin{table}[t]
+  \centering
+  \caption{SYNTHETIC writing-task demonstration: four fictional participants per condition. Values are mean $\pm$ sample SD.}
+  \label{tab:writing}
+  \begin{tabular}{@{}lrr@{}}
+    \toprule
+    Measure & No AI & With AI \\
+    \midrule
+    Time (min) & $23.38\pm2.56$ & $19.50\pm2.38$ \\
+    Quality (0--100) & $81.63\pm4.82$ & $84.50\pm2.65$ \\
+    Anchor recall (\%) & $85.00$ & $95.00$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Table~\ref{tab:software} summarizes a \emph{separate synthetic software log}, measured in milliseconds on the development system. It includes 100 timed Python executions after 5 warm-ups; all 100 completed, and 11 within-profile IQR flags were retained. These runs are \emph{not} 100 participants or AI treatment observations.
+
+\begin{table}[t]
+  \centering
+  \caption{SYNTHETIC Python software benchmark (100 measured runs, milliseconds).}
+  \label{tab:software}
+  \begin{tabular}{@{}lr@{}}
+    \toprule
+    Statistic & Result \\
+    \midrule
+    Mean $\pm$ SD (ms) & $24.06\pm3.30$ \\
+    Median (ms) & $22.94$ \\
+    p95 / p99 (ms) & $31.27$ / $35.74$ \\
+    Failures / IQR flags & $0$ / $11$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
