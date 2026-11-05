@@ -1,0 +1,19 @@
+# Synthetic software-pipeline benchmark for the Week 7 logging lab.
+# This is NOT a human-participant data collection configuration.
+collector:
+  source_csv: data/sample/example_measurements.csv
+  output_jsonl: data/raw/test_run.jsonl
+  summary_json: outputs/ss6/collector_summary.json
+  random_seed: 42
+  warmup_runs: 5
+  measured_runs: 100
+  workload_profiles:
+    - name: small
+      pair_multiplier: 1
+      weight: 0.60
+    - name: medium
+      pair_multiplier: 2
+      weight: 0.30
+    - name: large
+      pair_multiplier: 4
+      weight: 0.10

@@ -15,10 +15,14 @@ jobs:
           cache: pip
       - name: Install pinned dependencies
         run: python -m pip install -r requirements.txt
-      - name: Unit tests
+      - name: Unit tests (including SS7 logging)
         run: python -m unittest discover -s tests -v
       - name: Synthetic demo (not real findings)
         run: |
           python src/randomize.py --count 8
           python src/validate_data.py data/sample/example_measurements.csv
           python src/analyze.py
+      - name: SS7 JSONL software-measurement smoke test
+        run: |
+          python src/collector.py --config configs/collector.yaml
+          python -c "import json; from pathlib import Path; records=[json.loads(x) for x in Path('data/raw/test_run.jsonl').read_text().splitlines()]; assert len(records)==106; assert records[0]['event_type']=='metadata'; assert sum(x.get('phase')=='warmup' for x in records)==5; assert sum(x.get('phase')=='benchmark' for x in records)==100"

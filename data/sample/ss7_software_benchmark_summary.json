@@ -1,0 +1,48 @@
+{
+  "status": "SYNTHETIC SOFTWARE BENCHMARK ONLY - NOT HUMAN PRODUCTIVITY EVIDENCE",
+  "data_origin": "synthetic",
+  "measurement_target": "task2_python_validation_and_analysis",
+  "unit": "milliseconds",
+  "warmup_runs": 5,
+  "benchmark_runs": 100,
+  "successful_benchmark_runs": 100,
+  "failed_benchmark_runs": 0,
+  "failure_rate_percent": 0.0,
+  "mean_ms_success_only": 24.0577468,
+  "median_ms_success_only": 22.938223999999998,
+  "p95_ms_success_only": 31.27275835,
+  "p99_ms_success_only": 35.73564996000001,
+  "percentile_note": "Successful runs only; failures are separately counted, not silently deleted.",
+  "random_seed": 42,
+  "workload_profiles": [
+    {
+      "name": "small",
+      "pair_multiplier": 1,
+      "weight": 0.6
+    },
+    {
+      "name": "medium",
+      "pair_multiplier": 2,
+      "weight": 0.3
+    },
+    {
+      "name": "large",
+      "pair_multiplier": 4,
+      "weight": 0.1
+    }
+  ],
+  "logging_io_ms_separate_from_measurements": 0.594965,
+  "log_path": "data/sample/ss7_software_benchmark_demo.jsonl",
+  "environment": {
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "os": "Linux",
+    "os_release": "6.18.57",
+    "cpu_model": "not_reported",
+    "logical_cpu_count": 5,
+    "total_ram_bytes": 6236844032,
+    "python_version": "3.13.5",
+    "pandas_version": "2.2.3",
+    "numpy_version": "2.3.5",
+    "scipy_version": "1.17.0"
+  }
+}
