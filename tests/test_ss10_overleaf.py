@@ -11,7 +11,7 @@ class TestSS10Overleaf(unittest.TestCase):
         self.assertIn(r'\documentclass[conference]{IEEEtran}', main)
         for pkg in ('amsmath','booktabs','graphicx','hyperref'):
             self.assertIn(pkg, main)
-        for section in ('01_introduction','02_methodology','03_demonstration_results','04_discussion'):
+        for section in ('01_introduction','02_methodology','03_demonstration_results','04_discussion','05_conclusion'):
             self.assertIn(r'\input{sections/'+section+'}', main)
             self.assertTrue((PAPER/'sections'/(section+'.tex')).is_file())
 
@@ -30,15 +30,17 @@ class TestSS10Overleaf(unittest.TestCase):
         s=(PAPER/'sections'/'02_methodology.tex').read_text(encoding='utf-8')
         for lbl in ('fig:pipeline','tab:design','eq:pairedtime','eq:factmetrics'):
             self.assertIn(r'\label{'+lbl+'}',s)
-        for ref in (r'\ref{fig:pipeline}',r'\ref{tab:design}',r'\eqref{eq:pairedtime}'):
+        for ref in (r'\ref{fig:pipeline}',r'\ref{tab:design}'):
             self.assertIn(ref,s)
+        self.assertRegex(s, r'\\(?:eqref|ref)\{eq:pairedtime\}')
+        self.assertRegex(s, r'\\(?:eqref|ref)\{eq:factmetrics\}')
         self.assertIn('minutes',s)
         self.assertIn('milliseconds',s)
 
     def test_synthetic_status_never_confused_with_results(self):
         a=(PAPER/'main.tex').read_text(encoding='utf-8')
         b=(PAPER/'sections'/'03_demonstration_results.tex').read_text(encoding='utf-8')
-        self.assertIn('No participants have yet been recruited',a)
+        self.assertTrue(any(phrase in a for phrase in ('No participants have yet been recruited','No real participants have been recruited')))
         self.assertIn('four fictional participants',b)
         self.assertIn('100 timed Python executions',b)
         self.assertIn('No AI',b)

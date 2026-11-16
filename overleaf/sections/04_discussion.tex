@@ -1,4 +1,63 @@
-\section{Discussion and Limitations}\label{sec:discussion}
-This report documents a proposed crossover experiment and reproducibility infrastructure. The synthetic writing comparison validates formulas and figure/table generation, but it cannot establish that GenAI improves employee productivity, maintains quality, or changes occupational outcomes. With four fictitious pairs, the interval cannot be treated as population evidence. Quality non-inferiority is also \emph{not} established: the observed demonstration quality difference is not a confidence-interval test.
 
-The future study requires pilot-tested matched tasks, justified recruitment and power planning, control of task-order and learning effects, blinded reviewer training, prespecified exclusion rules, and an analysis that respects pairing. Uncertainty in the separate repeated-run software benchmark may be affected by machine-specific correlations; its measurements quantify software execution only, not writer speed. Reproducibility files and an audit trail are maintained in the accompanying repository. Upon collecting consented real data, the team will replace demonstration tables, transparently report deviations, and reassess the scientific conclusions.
+\section{Discussion and Limitations}
+\label{sec:discussion}
+
+\subsection{Interpretation of Results}
+
+Table~\ref{tab:writing} illustrates the proposed paired
+analysis using four fictional participants. The synthetic
+mean completion time was 23.38 minutes without AI and
+19.50 minutes with AI, corresponding to a mean paired
+time saving of 3.875 minutes. However, the 95\% bootstrap
+confidence interval was [0.00, 6.25] minutes and included
+zero. More importantly, these observations were
+synthetically generated. They validate the statistical
+workflow but cannot establish a real productivity effect.
+
+The demonstration also produced higher average quality
+scores and required-fact coverage under the AI-assisted
+condition. Nevertheless, the proportion of unsupported
+claims was higher. This illustrates why completion time,
+quality, and factual correctness must be assessed together.
+
+Previous research has examined the effects of generative
+AI on professional tasks~\cite{noyExperimentalEvidenceProductivity2023,
+dellacquaNavigatingJaggedTechnological2026}.
+Our synthetic results should not be directly compared
+with empirical effect sizes from those studies.
+
+Table~\ref{tab:software} summarizes a separate benchmark
+of 100 Python analysis executions. These measurements
+evaluate software performance and logging reliability,
+not human productivity or AI inference speed.
+
+\subsection{Limitations and Threats to Validity}
+
+\textit{Internal Validity:}
+No real participants were recruited, and the four
+participant pairs are fictional. Consequently, the
+demonstration cannot support causal conclusions.
+A future experiment must control task-order effects,
+participant learning, fatigue, and reviewer bias.
+
+\textit{External Validity:}
+The proposed study focuses on two matched professional
+writing tasks. Their equivalence has not yet been
+established through pilot testing. Findings from a future
+study may not generalize to other professions or tasks.
+Software execution times may also vary across hardware
+and operating systems.
+
+\textit{Construct Validity:}
+Completion time alone does not capture the full value
+of professional work. Quality assessment requires
+consistent scoring criteria and trained reviewers.
+The proposed five-point non-inferiority margin remains
+provisional and requires statistical justification.
+Furthermore, Python execution time is not a substitute
+for human task completion time.
+
+These limitations define the boundaries of the current
+work. The primary contribution is a reproducible
+research protocol and analysis pipeline, rather than
+an empirical demonstration of AI effectiveness.
