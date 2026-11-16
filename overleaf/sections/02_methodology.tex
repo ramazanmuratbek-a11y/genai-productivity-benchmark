@@ -46,6 +46,8 @@ Figure~\ref{fig:pipeline} summarizes the planned human-study pipeline and the \e
 \end{table}
 
 \subsection{Primary outcome and estimand}
+The primary time-saving estimand is defined in
+Eq.~\ref{eq:pairedtime}.
 Let $T_{i,0}$ and $T_{i,1}$ be participant $i$'s completed writing time without and with AI, respectively, both in \emph{minutes}. The primary estimand is the population mean paired time saving, estimated by
 \begin{equation}\label{eq:pairedtime}
   D_i=T_{i,0}-T_{i,1},\qquad
@@ -55,6 +57,10 @@ Here $D_i>0$ indicates time saved. The primary null is no mean benefit ($\mathbb
 
 \subsection{Secondary outcomes and quality guardrail}
 Two independent, blinded assessors score each response against accuracy/completeness (30 points), clarity (25), relevance (25), and professional language (20). Let $Q_{i,1}-Q_{i,0}$ be the with-AI minus without-AI quality difference. The provisional non-inferiority margin is $-5$ points; a formal claim would require a justified margin and the \emph{lower} confidence bound for the paired mean quality difference to exceed $-5$, rather than simply checking the point estimate.
+
+The factual evaluation metrics are formally
+defined in Eq.~\ref{eq:factmetrics}.
+
 
 Required-fact recall is the fraction of five anchor facts represented correctly. For all assessable factual claims, precision and F1 are
 \begin{equation}\label{eq:factmetrics}

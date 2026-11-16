@@ -1,36 +1,82 @@
-% SS10 / Narxoz Research Methods. Proposed study + SYNTHETIC demonstration.
-% Compiler: pdfLaTeX; citations: BibTeX (IEEEtran numeric style).
+
+% Narxoz Research Methods - Research Paper
+% Compiler: pdfLaTeX + BibTeX
+
 \documentclass[conference]{IEEEtran}
+
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\usepackage{amsmath,amssymb}
+\usepackage{amsmath,amsfonts}
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,shapes.geometric}
 \usepackage[hidelinks]{hyperref}
 \usepackage{url}
+
 \title{The Impact of Generative AI Tools on Employee Productivity and Work Quality in Knowledge-Based Office Tasks}
+
 \author{
-   \IEEEauthorblockN{Muratbek Ramazan}
-   \IEEEauthorblockA{Narxoz University\\Almaty, Kazakhstan}
-   \and
-   \IEEEauthorblockN{Tasbolatkyzy Zhanerke}
-   \IEEEauthorblockA{Narxoz University\\Almaty, Kazakhstan}
+  \IEEEauthorblockN{Muratbek Ramazan}
+  \IEEEauthorblockA{Narxoz University\\Almaty, Kazakhstan}
+  \and
+  \IEEEauthorblockN{Tasbolatkyzy Zhanerke}
+  \IEEEauthorblockA{Narxoz University\\Almaty, Kazakhstan}
 }
+
 \begin{document}
+
 \maketitle
+
+
 \begin{abstract}
-This paper presents a reproducible protocol for evaluating generative AI assistance in professional writing. We propose a randomized, counterbalanced crossover comparison using matched writing tasks, a fair no-AI baseline, completion-time measures, blinded quality scoring, and factual-evaluation rules. We describe a reproducible Python analysis pipeline and show synthetic examples for verification only. Four fictional participant pairs and 100 separate software-benchmark runs are used to test reporting, not to estimate workplace productivity. No participants have yet been recruited; thus, this manuscript reports a study design and software demonstration rather than empirical findings.
+Generative artificial intelligence (GenAI) is increasingly
+used for knowledge-based office writing, yet productivity
+gains cannot be assessed from task speed alone. This paper
+presents a reproducible experimental protocol for evaluating
+whether GenAI assistance reduces human completion time while
+preserving output quality and factual correctness.
+
+We propose a randomized, counterbalanced crossover design
+in which each participant completes two comparable professional
+writing tasks under AI-assisted and no-AI conditions. The
+protocol specifies a realistic control baseline, a provisional
+30-minute task limit, blinded quality scoring using a
+100-point rubric, and factual precision, recall, and F1
+measures. We provide Python tools for data validation,
+paired analysis, bootstrap uncertainty estimation,
+and scientific reporting.
+
+To verify the workflow, we analyze a synthetic dataset
+with four fictional participant pairs and a separate
+benchmark of 100 measured Python software executions.
+The illustrative paired mean time saving is 3.875 minutes,
+with a 95\% bootstrap confidence interval of
+[0.00, 6.25] minutes. These values are not empirical
+evidence of AI effectiveness. Software execution times
+are measured in milliseconds and cannot represent
+human productivity.
+
+No real participants have been recruited. Our contribution
+is an auditable research framework that supports a future
+empirical investigation.
 \end{abstract}
+
 \begin{IEEEkeywords}
-  generative AI, knowledge work, experimental design, writing productivity, reproducibility, paired bootstrap
+generative AI, knowledge work, experimental design,
+writing productivity, reproducibility, paired bootstrap
 \end{IEEEkeywords}
+
+% Research paper sections
 \input{sections/01_introduction}
 \input{sections/02_methodology}
 \input{sections/03_demonstration_results}
 \input{sections/04_discussion}
+\input{sections/05_conclusion}
+
+% Bibliography
 \bibliographystyle{IEEEtran}
 \bibliography{references}
+
 \end{document}

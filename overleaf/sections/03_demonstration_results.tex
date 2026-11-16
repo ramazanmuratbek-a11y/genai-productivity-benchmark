@@ -1,6 +1,30 @@
 \section{Synthetic Demonstration Results}\label{sec:demonstration}
 \textbf{All numbers in this section are generated demonstration data, not observations from recruited employees.} The paired CSV has four fictional participants with eight completed task records. The values in Table~\ref{tab:writing} reproduce the project's committed processed summary. Mean paired time saved was 3.875 min (95\% paired percentile-bootstrap interval [0.00, 6.25] min; 10,000 resamples, seed 42). This interval includes zero, and the sample is fictional; no effectiveness inference is justified.
 
+Figure~\ref{fig:writing_time} compares the mean
+completion times under the two experimental
+conditions. The error bars show separate
+bootstrap confidence intervals for each
+condition, rather than the paired confidence
+interval for time saved.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[
+        width=0.92\columnwidth,
+        height=0.22\textheight,
+        keepaspectratio
+    ]{fig1_latency_vs_load.pdf}
+    \caption{Mean completion time by condition
+    using synthetic demonstration data
+    (four fictional participant pairs).
+    Error bars represent condition-wise
+    95\% bootstrap confidence intervals.
+    These results are not empirical evidence
+    of AI effectiveness.}
+    \label{fig:writing_time}
+\end{figure}
+
 \begin{table}[t]
   \centering
   \caption{SYNTHETIC writing-task demonstration: four fictional participants per condition. Values are mean $\pm$ sample SD.}

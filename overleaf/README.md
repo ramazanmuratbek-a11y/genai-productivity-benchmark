@@ -1,45 +1,50 @@
-# SS10 — IEEE Overleaf manuscript
+# Task 4 / SS11 — IEEE four-page research-paper draft
 
-**Research status:** Proposed human writing study. All quantitative results displayed in the manuscript are **synthetic demonstrations**, not empirical findings.
+**Research title:** The Impact of Generative AI Tools on Employee Productivity and Work Quality in Knowledge-Based Office Tasks
+**Authors:** Muratbek Ramazan and Tasbolatkyzy Zhanerke, Narxoz University
 
-## Import to Overleaf
-1. Create a new **Blank Project** at https://www.overleaf.com/.
-2. Upload the **contents** of this folder (or upload the standalone `SS10_Overleaf_Project.zip` as a new project).
-3. Set `main.tex` as the main document and compiler **pdfLaTeX**.
-4. Recompile (Overleaf handles the BibTeX bibliography automatically). Verify all `\cite` and `\ref` markers resolve.
+## Research status (important)
 
-## Project structure
-- `main.tex`: `IEEEtran` conference template, abstract, packages and IMRaD entrypoint.
-- `sections/01_introduction.tex`: five-step academic funnel, RQ and contributions.
-- `sections/02_methodology.tex`: counterbalanced crossover, paired estimator, quality/factual guardrails, TikZ pipeline and parameter table.
-- `sections/03_demonstration_results.tex`: **fictional** writing sample and separate software-timing example.
-- `sections/04_discussion.tex`: limitations and future empirical study.
-- `references.bib`: sanitized subset of the team's existing Zotero bibliography (four cited references).
+This paper presents a **proposed randomized, counterbalanced human writing study** and **synthetic verification data**, not a completed experiment with employees. The writing example has four fictional participant pairs (eight task records, minutes). A **separate** technical stream has five warm-ups and 100 measured Python validation-and-analysis executions (milliseconds). The 100 software runs do not measure AI response time, employee productivity, or 100 real participants. No causal inference is justified from the demonstration data.
 
-## Zotero / Better BibTeX workflow
-Export selected items via Zotero > Export Items > Better BibTeX (`.bib`) and preserve stable citation keys. Replace `references.bib` only after verifying the exported keys match each `\cite{key}`. Remove `file`, `abstract`, `urldate`, and other private or extraneous fields as appropriate; retain author, title, venue, year, page range and DOI. Exporting does not grant permission to redistribute full article PDFs.
+## Files
 
-IEEE uses numeric `\cite{key}` with the `IEEEtran` style. `\citep` and `\citeauthor` are natbib-based commands and are not portable defaults in this IEEE setup; do not add them without configuring a compatible package and style.
+| File | Purpose |
+|---|---|
+| `main.tex` | IEEEtran preamble, 150–250-word abstract, section inputs, bibliography |
+| `sections/01_introduction.tex` | Research context, gap, questions, 12 scholarly citations |
+| `sections/02_methodology.tex` | Proposed crossover, metrics, TikZ protocol diagram, design table |
+| `sections/03_demonstration_results.tex` | Fictional writing-task analysis, separate software benchmark, illustration and tables |
+| `sections/04_discussion.tex` | Interpretation, internal/external/construct validity limits |
+| `sections/05_conclusion.tex` | Methodological contribution, answers to RQs, future real study |
+| `references.bib` | Twelve Zotero-derived, cleaned journal/conference citations |
+| `fig1_latency_vs_load.pdf` | Existing vector plot of **synthetic human writing time**; name is historical, not software latency |
 
-## Compile locally
-Run from the `overleaf/` directory:
+## Open in Overleaf
 
-```bash
-pdflatex -interaction=nonstopmode -halt-on-error main.tex
-bibtex main
-pdflatex -interaction=nonstopmode -halt-on-error main.tex
-pdflatex -interaction=nonstopmode -halt-on-error main.tex
+This directory mirrors the author's working Overleaf project at the time of the Task 4 / SS11 update. To update an **existing** Overleaf project, upload or replace the files from this directory while keeping the `sections/` structure. Set `main.tex` as the main document and use the **pdfLaTeX** compiler; the template uses IEEEtran and BibTeX (`references.bib`). Recompile twice if citations need a second pass. **Do not replace `main.tex` with a section file**.
+
+The user-verified Overleaf export was **four pages with 12 references and Fig. 2**. LaTeX page counts can differ across TeX distributions, so inspect the compiled PDF after importing.
+
+## GitHub test commands
+
+From repository root:
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+.\.venv\Scripts\python.exe src\generate_ss9_report.py --check
 ```
 
-## Academic integrity checklist
-- Do not label synthetic records as actual recruits or make productivity causal claims.
-- Never mix human elapsed time (minutes) with Python execution time (milliseconds).
-- Verify actual AI model, trial recruitment, task-set pilot, ethics and sample-size decisions before empirical execution.
-- Keep `\label` / `\ref` for figures, sections and equations rather than typing hardcoded numbers.
-- Use LaTeX directional quotation marks ``example'' rather than straight literal quotes in prose.
-- Use `word~\cite{key}` for stable spacing in citations.
-- Inspect compiler log for undefined citations/references and overfull/underfull boxes.
-- Avoid committing local Zotero file paths, proprietary PDFs or real participants' data.
+`tests/test_ss10_overleaf.py` remains backward-compatible with the wording and cross-references of this revised paper. `tests/test_task4_ss11_paper.py` checks manuscript structure, abstract word range, citation/label integrity, figure presence, and honest synthetic-data provenance. **Tests do not verify visual page count or PDF typography**; check the Overleaf preview and exported PDF separately.
 
-## Notes on source provenance
-Content is based on the team's existing Task 2 study protocol, Task 3 synthetic summaries and SS7–SS9 technical pipeline. The LaTeX paper does not replace `reports/paper_section_4.md`; it formats a consistent manuscript for the SS10 Overleaf exercise. The IEEE/ACM venue has **not** been selected for actual submission; IEEE is the classroom default here.
+## Citation hygiene and ethics
+
+* Use relevant `\cite{key}` commands in the text; 12 entries are currently cited.
+* Preserve identifiers in `references.bib` when editing Zotero exports.
+* Do not upload private Zotero attachments, copyrighted full-text PDFs, or identifiable participant data.
+* This IEEE-style layout is for the course draft, not evidence of submission to a conference.
+* If results are later collected from real participants, re-run the analysis and revise every empirical claim.
+
+## Verification summary
+
+The exact `.tex`, `.bib`, and figure source files were taken from the supplied Overleaf ZIP. The README and Python source-integrity tests were updated for Task 4 / SS11. The independently supplied four-page PDF was visually reviewed in the earlier audit. Current test execution evidence should be recorded in GitHub CI after creating the pull request.
